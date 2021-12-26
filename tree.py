@@ -111,7 +111,7 @@ def C45_chooseBestFeatureToSplit(dataset):
         if (IV == 0):  # không để IV = 0
             continue
         gain_ratio = infoGain / IV  # tính được Gain ratio của thuộc tính đang xét
-        print(u"The information gain of the %d feature in C4.5 is：%.3f" % (i, gain_ratio))
+        print(u"Gain ratio của thuộc tính %d trong ID3 là：%.3f" % (i, gain_ratio))
         if (gain_ratio > bestGain_ratio):
             bestGain_ratio = gain_ratio # Lấy ra Gain ratio lớn nhất 
             bestFeature = i
@@ -327,43 +327,38 @@ if __name__ == '__main__':
     testfile = 'testset.txt'
     dataset, labels = read_data(filename)
     # dataset,features=createDataSet()
-    print('dataset', dataset)
+    print('Dữ liệu: ', dataset)
     print("---------------------------------------------")
-    print(u"Data set length", len(dataset))
-    print("Ent(D):", cal_entropy(dataset))
+    print(u"Số hàng dữ liệu: ", len(dataset))
+    print("Entropy của dữ liệu: ", cal_entropy(dataset))
     print("---------------------------------------------")
-
-    print(u"The following is the first time to find the optimal index:\n")
-    print(u"The optimal feature index of the ID3 algorithm is:" + str(ID3_chooseBestFeatureToSplit(dataset)))
-    print("--------------------------------------------------")
-    print(u"The optimal feature index of the C4.5 algorithm is:" + str(C45_chooseBestFeatureToSplit(dataset)))
-    print("--------------------------------------------------")
-    print("---------------------------------------------")
-
-    print(u"Let's start to create the corresponding decision tree-------")
 
     while True:
         dec_tree = '2'
         # ID3 decision tree
         if dec_tree == '1':
+            print(u"Thuộc tính dùng để chia trong thuật toán ID3 là: " + str(ID3_chooseBestFeatureToSplit(dataset)))
+            print("--------------------------------------------------")
             labels_tmp = labels[:]  # Copy, createTree will change the labels
             ID3desicionTree = ID3_createTree(dataset, labels_tmp, test_dataset=read_testset(testfile))
-            print('ID3desicionTree:\n', ID3desicionTree)
+            print('Cây quyết định ID3: \n', ID3desicionTree)
             # treePlotter.createPlot(ID3desicionTree)
             treePlotter.ID3_Tree(ID3desicionTree)
             testSet = read_testset(testfile)
-            print("The following is the result of the test data set:")
+            print("Kết quả của test dataset: ")
             print('ID3_TestSet_classifyResult:\n', classifytest(ID3desicionTree, labels, testSet))
             print("---------------------------------------------")
 
         # C4.5 decision tree
         if dec_tree == '2':
+            print(u"Thuộc tính đầu tiên dùng để chia trong thuật toán C4.5 là: " + labels[C45_chooseBestFeatureToSplit(dataset)])
+            print("--------------------------------------------------")
             labels_tmp = labels[:]  # Copy, createTree will change the labels
             C45desicionTree = C45_createTree(dataset, labels_tmp, test_dataset=read_testset(testfile))
-            print('C45desicionTree:\n', C45desicionTree)
+            print('Cây quyết định C4.5: \n', C45desicionTree)
             treePlotter.C45_Tree(C45desicionTree)
             testSet = read_testset(testfile)
-            print("The following is the result of the test data set:")
+            print("Kết quả của test dataset: ")
             print('C4.5_TestSet_classifyResult:\n', classifytest(C45desicionTree, labels, testSet))
             print("---------------------------------------------")
 
