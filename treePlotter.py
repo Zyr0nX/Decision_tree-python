@@ -1,7 +1,6 @@
-#coding:utf-8
 import matplotlib.pyplot as plt
 from pylab import mpl
-mpl.rcParams['font.sans-serif'] = ['SimHei']
+mpl.rcParams['font.sans-serif'] = ['Calibri']
 decisionNode = dict(boxstyle="sawtooth", fc="0.8")
 leafNode = dict(boxstyle="round4", fc="0.8")
 arrow_args = dict(arrowstyle="<-")
@@ -68,8 +67,8 @@ def createPlot(inTree):
     plotTree.xOff = -0.5 / plotTree.totalw
     plotTree.yOff = 1.0
     plotTree(inTree, (0.5, 1.0), '')
-    #plt.show()
-#ID3决策树
+
+# Cây quyết định ID3
 def ID3_Tree(inTree):
     fig = plt.figure(1, facecolor='white')
     fig.clf()
@@ -80,10 +79,10 @@ def ID3_Tree(inTree):
     plotTree.xOff = -0.5 / plotTree.totalw
     plotTree.yOff = 1.0
     plotTree(inTree, (0.5, 1.0), '')
-    plt.title("ID3决策树",fontsize=12,color='red')
+    plt.title("Cây quyết định ID3",fontsize=12,color='red')
     plt.show()
 
-#C4.5决策树
+#Cây quyết định C4.5
 def C45_Tree(inTree):
     fig = plt.figure(2, facecolor='white')
     fig.clf()
@@ -94,20 +93,5 @@ def C45_Tree(inTree):
     plotTree.xOff = -0.5 / plotTree.totalw
     plotTree.yOff = 1.0
     plotTree(inTree, (0.5, 1.0), '')
-    plt.title("C4.5决策树",fontsize=12,color='red')
+    plt.title("Cây quyết định C4.5",fontsize=12,color='red')
     plt.show()
-
-#CART决策树
-def CART_Tree(inTree):
-    fig = plt.figure(3, facecolor='white')
-    fig.clf()
-    axprops = dict(xticks=[], yticks=[])
-    createPlot.ax1 = plt.subplot(111, frameon=False, **axprops)
-    plotTree.totalw = float(getNumLeafs(inTree))
-    plotTree.totalD = float(getTreeDepth(inTree))
-    plotTree.xOff = -0.5 / plotTree.totalw
-    plotTree.yOff = 1.0
-    plotTree(inTree, (0.5, 1.0), '')
-    plt.title("CART决策树",fontsize=12,color='red')
-    plt.show()
-

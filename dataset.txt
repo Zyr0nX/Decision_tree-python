@@ -1,16 +1,15 @@
-0,0,0,0,0
-0,0,0,1,0
-0,1,0,1,1
-0,1,1,0,1
-0,0,0,0,0
-1,0,0,0,0
-1,0,0,1,0
-1,1,1,1,1
-1,0,1,2,1
-1,0,1,2,1
-2,0,1,2,1
-2,0,1,1,1
-2,1,0,1,1
-2,1,0,2,1
-2,0,0,0,0
-2,0,0,2,0
+Thời tiết,Nhiệt độ,Độ ẩm,Có gió,Cuối tuần,Lớp
+Nắng,Cao,Thấp,Có,Sai,Ra ngoài
+Nắng,Cao,Cao,Có,Đúng,Ở nhà
+Nắng,Cao,Cao,Không,Đúng,Ở nhà
+Nắng,Thấp,Cao,Không,Đúng,Ở nhà
+Nắng,Thấp,Thấp,Không,Sai,Ra ngoài
+U ám,Thấp,Cao,Có,Sai,Ra ngoài
+U ám,Cao,Thấp,Không,Đúng,Ra ngoài
+U ám,Thấp,Thấp,Có,Sai,Ra ngoài
+U ám,Cao,Thấp,Không,Sai,Ra ngoài
+Mưa,Thấp,Cao,Có,Đúng,Ở nhà
+Mưa,Thấp,Thấp,Có,Đúng,Ở nhà
+Mưa,Cao,Cao,Không,Sai,Ra ngoài
+Mưa,Thấp,Cao,Không,Đúng,Ra ngoài
+Mưa,Cao,Cao,Không,Đúng,Ra ngoài

@@ -1,7 +1,6 @@
-0,0,0,1,0
-0,1,0,1,1
-1,0,1,2,1
-1,0,0,1,0
-2,1,0,2,1
-2,0,0,0,0
-2,0,0,2,0
+Thời tiết,Nhiệt độ,Độ ẩm,Có gió,Cuối tuần,Lớp
+Nắng,Thấp,Thấp,Có,Đúng,Ở nhà
+Nắng,Cao,Thấp,Không,Sai,Ra ngoài
+U ám,Thấp,Thấp,Có,Sai,Ở nhà
+Mưa,Thấp,Thấp,Không,Đúng,Ở nhà
+Mưa,Thấp,Cao,Không,Đúng,Ra ngoài
